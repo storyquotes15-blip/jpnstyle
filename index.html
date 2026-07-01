@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JPN STYLE</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:#050507;
+  color:#fff;
+  font-family:Inter,Arial,sans-serif;
+}
+a{text-decoration:none;color:inherit}
+.header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(8,8,12,.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid #191922;
+}
+.topbar{
+  max-width:1240px;
+  margin:auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+.logo{
+  font-size:28px;
+  font-weight:1000;
+  letter-spacing:-1px;
+  color:#ff3f6c;
+}
+.logo span{color:#fff}
+.nav{
+  display:flex;
+  gap:22px;
+  flex:1;
+  align-items:center;
+  overflow-x:auto;
+}
+.nav a{
+  color:#b9b9c4;
+  font-weight:800;
+  white-space:nowrap;
+  transition:.25s;
+}
+.nav a:hover{color:#fff}
+.social{
+  display:flex;
+  gap:8px;
+}
+.social a{
+  padding:12px 14px;
+  border-radius:12px;
+  font-size:13px;
+  font-weight:900;
+}
+.telegram{background:#229ed9}
+.facebook{background:#1877f2}
+.hero-wrap{
+  max-width:1240px;
+  margin:55px auto 25px;
+  padding:0 18px;
+  overflow:hidden;
+}
+.hero-track{
+  display:flex;
+  gap:18px;
+  animation:slideHero 28s linear infinite;
+}
+.hero-track:hover{animation-play-state:paused}
+.hero-card{
+  min-width:520px;
+  height:280px;
+  border-radius:16px;
+  overflow:hidden;
+  position:relative;
+  background:#15151d;
+  cursor:pointer;
+}
+.hero-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.5s;
+}
+.hero-card:hover img{transform:scale(1.08)}
+.hero-card:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.05));
+}
+.hero-title{
+  position:absolute;
+  left:28px;
+  bottom:28px;
+  z-index:2;
+  font-size:30px;
+  font-weight:1000;
+}
+@keyframes slideHero{
+  from{transform:translateX(0)}
+  to{transform:translateX(-55%)}
+}
+.search-box{
+  max-width:800px;
+  margin:25px auto;
+  padding:0 18px;
+  display:flex;
+}
+.search-box input{
+  flex:1;
+  background:#15151d;
+  border:1px solid #272735;
+  color:#fff;
+  padding:17px;
+  border-radius:16px 0 0 16px;
+  outline:none;
+  font-size:16px;
+}
+.search-box button{
+  background:#ff3f6c;
+  border:0;
+  color:#fff;
+  padding:0 26px;
+  font-weight:1000;
+  border-radius:0 16px 16px 0;
+  cursor:pointer;
+}
+.ads{
+  max-width:1240px;
+  margin:22px auto;
+  padding:0 18px;
+}
+.ads img{
+  width:100%;
+  display:block;
+  border-radius:16px;
+  border:1px solid #252532;
+}
+.layout{
+  max-width:1240px;
+  margin:auto;
+  padding:0 18px;
+  display:grid;
+  grid-template-columns:160px 1fr 160px;
+  gap:20px;
+}
+.sidebar{
+  position:sticky;
+  top:100px;
+  height:max-content;
+}
+.sidebar img{
+  width:100%;
+  border-radius:14px;
+  border:1px solid #252532;
+}
+.section-title{
+  margin:28px 0 18px;
+  font-size:23px;
+  font-weight:1000;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.section-title:before{
+  content:"";
+  width:5px;
+  height:24px;
+  border-radius:4px;
+  background:#ff3f6c;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:20px;
+}
+.card{
+  cursor:pointer;
+  transition:.25s;
+}
+.card:hover{transform:translateY(-6px)}
+.thumb{
+  aspect-ratio:16/11;
+  border-radius:14px;
+  overflow:hidden;
+  background:#15151d;
+  position:relative;
+  border:1px solid #252532;
+}
+.thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.45s;
+}
+.card:hover .thumb img{transform:scale(1.08)}
+.badge{
+  position:absolute;
+  right:9px;
+  bottom:9px;
+  padding:5px 8px;
+  border-radius:7px;
+  background:rgba(0,0,0,.75);
+  font-size:12px;
+  font-weight:900;
+}
+.card h3{
+  font-size:15px;
+  line-height:1.35;
+  margin:10px 0 5px;
+  color:#e9e9ee;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.card p{
+  margin:0;
+  color:#8d8d98;
+  font-size:13px;
+}
+.empty{
+  background:#111118;
+  border:1px solid #252532;
+  border-radius:16px;
+  padding:35px;
+  color:#aaa;
+  text-align:center;
+}
+.player{
+  aspect-ratio:16/9;
+  background:#000;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid #252532;
+}
+.player iframe{width:100%;height:100%}
+.meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin:14px 0 18px;
+}
+.meta span{
+  background:#171720;
+  padding:9px 13px;
+  border-radius:999px;
+  color:#cfcfd8;
+  font-size:13px;
+}
+.btnrow{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:18px 0;
+}
+.btn{
+  padding:14px 18px;
+  border-radius:13px;
+  font-weight:1000;
+}
+.watch{background:#ff3f6c}
+.uncensored{background:#ff1744}
+.info{
+  margin-top:22px;
+  display:grid;
+  grid-template-columns:230px 1fr;
+  gap:20px;
+  background:#111118;
+  border:1px solid #252532;
+  border-radius:18px;
+  padding:18px;
+}
+.info img{
+  width:100%;
+  border-radius:14px;
+}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:14px;
+  margin:18px 0 26px;
+}
+.gallery-item{
+  aspect-ratio:16/10;
+  border-radius:14px;
+  overflow:hidden;
+  background:#15151d;
+  border:1px solid #252532;
+}
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.35s;
+}
+.gallery-item:hover img{
+  transform:scale(1.08);
+}
+.sticky-mobile{
+  display:none;
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:200;
+  background:#09090d;
+  padding:8px;
+  border-top:1px solid #252532;
+}
+.sticky-mobile img{
+  width:100%;
+  border-radius:10px;
+}
+footer{
+  text-align:center;
+  color:#777;
+  padding:45px 15px 85px;
+}
+@media(max-width:1000px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{display:none}
+}
+@media(max-width:760px){
+  .topbar{flex-wrap:wrap}
+  .logo{width:100%;text-align:center}
+  .nav{order:3;width:100%}
+  .social{width:100%;display:grid;grid-template-columns:1fr 1fr}
+  .social a{text-align:center}
+  .hero-wrap{margin-top:25px}
+  .hero-card{min-width:82vw;height:210px}
+  .hero-title{font-size:22px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .info{grid-template-columns:1fr}
+  .sticky-mobile{display:block}
+}
+
+.image-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  z-index:9999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+.image-modal.active{display:flex}
+.image-modal img{
+  max-width:92vw;
+  max-height:82vh;
+  border-radius:16px;
+  border:1px solid #333;
+}
+.modal-close,.modal-prev,.modal-next{
+  position:absolute;
+  background:#ff3f6c;
+  color:#fff;
+  border:0;
+  cursor:pointer;
+  font-weight:1000;
+}
+.modal-close{
+  top:18px;
+  right:18px;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  font-size:22px;
+}
+.modal-prev,.modal-next{
+  top:50%;
+  transform:translateY(-50%);
+  width:46px;
+  height:60px;
+  border-radius:14px;
+  font-size:28px;
+}
+.modal-prev{left:18px}
+.modal-next{right:18px}
+.modal-count{
+  position:absolute;
+  bottom:18px;
+  background:#111118;
+  border:1px solid #333;
+  padding:9px 14px;
+  border-radius:999px;
+  color:#ddd;
+  font-size:13px;
+}
+.gallery-item{cursor:pointer}
+@media(max-width:760px){
+  .modal-prev,.modal-next{
+    width:40px;
+    height:50px;
+    font-size:22px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="topbar">
+    <a class="logo" href="./">JPN<span>STYLE</span>.</a>
+
+    <nav class="nav">
+      <a href="./">Baru</a>
+      <a href="#">Populer</a>
+      <a href="#">Terbaru</a>
+      <a href="#">Trending</a>
+      <a href="#">Jenis</a>
+      <a href="#">Koleksi</a>
+      <a href="#">Tanpa Sensor</a>
+    </nav>
+
+    <div class="social">
+      <a class="telegram" href="https://t.me/jpnvids1no1stylegruop" target="_blank">TELEGRAM</a>
+      <a class="facebook" href="https://web.facebook.com/filmdramajapan/" target="_blank">FACEBOOK</a>
+    </div>
+  </div>
+</header>
+
+<div class="ads">
+  <a href="https://wa.me/6285148206443" target="_blank">
+    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjjNYTkmo6XbXNYzLHqnV_SzCAOEzmJFOTGxYldOdQXwHW6HB2iP_giLEB8yjZxgiM2dBjP6q-gUTs9yph64wXvXwilh25DDk6q-XxaB25BDtjL_-qHSnbRNalddM2o_JiqqUL64Uy_qUFhaQgaPpim8UdAdxtCDaudjCEUEXb0a6_ARNSogEW7q5nmPQ=w640-h164">
+  </a>
+</div>
+
+<section class="hero-wrap">
+  <div class="hero-track" id="heroTrack"></div>
+</section>
+
+<form class="search-box" id="searchForm">
+  <input id="codeInput" type="text" placeholder="Masukkan CODE, contoh: MAAN-1172">
+  <button type="submit">SEARCH</button>
+</form>
+
+<div class="layout">
+  <aside class="sidebar">
+    <a href="https://wa.me/6285148206443" target="_blank">
+      <img src="https://blogger.googleusercontent.com/img/a/AVvXsEiaw6O1JaLtKbIRRWJE8EPqvFUfKHOMwmR4sIDknUK5Egy0hM6MTrf5-PKVuL_fJ2_jFcYcTQgPAMtwWOSZpMdZQra7gE8uqZNSAcqNg03tXtZIZ2z_9CGlB00VZ0751rpL3g_Y7zJv9laiDuP8yXMRiLX9Dnvb1Na2GwQmGh6lRxtKaKOuDnJdvW2bNQ=w640-h164">
+    </a>
+  </aside>
+
+  <main class="main" id="app"></main>
+
+  <aside class="sidebar">
+    <a href="https://wa.me/6285148206443" target="_blank">
+      <img src="https://blogger.googleusercontent.com/img/a/AVvXsEisaKQ-YJt-ck42lD7Hvp_jpe6OYgPLpIDtZFiii0uJLmJkUpWsN2YHE6e5y_XvuyDOvs8RyQX_09g_Gs25F1eqhnSpIdH0JQTCDKsjL6IkdAls7nzd2llBhv54AaJBeJ8yzq6_gpDwOn_YtqubcNViZ0Q2yHqzt7lHqTIT5VzhxIDdaCxDjH_qfK1KgQ">
+    </a>
+  </aside>
+</div>
+
+<div class="ads">
+  <a href="#" target="_blank">
+    <img src="https://via.placeholder.com/1200x150/ffcc00/111111?text=BANNER+BAWAH+-+TEMPEL+ADS+GAMBAR+DI+SINI">
+  </a>
+</div>
+
+<div class="sticky-mobile">
+  <a href="#" target="_blank">
+    <img src="https://via.placeholder.com/728x90/ff3f6c/ffffff?text=STICKY+MOBILE+ADS">
+  </a>
+</div>
+
+
+<div class="image-modal" id="imageModal">
+  <button class="modal-close" onclick="closeImageModal()">×</button>
+  <button class="modal-prev" onclick="prevImage()">‹</button>
+  <img id="modalImage" src="">
+  <button class="modal-next" onclick="nextImage()">›</button>
+  <div class="modal-count" id="modalCount">1 / 1</div>
+</div>
+
+<footer>© 2026 JPN STYLE</footer>
+
+<script>
+/*
+TEMPEL SCRIPT POPUNDER ADSTERRA / MONETAG DI SINI
+*/
+</script>
+
+<script>
+const API_BASE = "https://gloryjpn.fadlydats1594.workers.dev";
+
+const app = document.getElementById("app");
+const form = document.getElementById("searchForm");
+const input = document.getElementById("codeInput");
+const heroTrack = document.getElementById("heroTrack");
+
+form.addEventListener("submit", e=>{
+  e.preventDefault();
+  const code = input.value.trim();
+  if(!code) return alert("Silakan masukkan code.");
+  history.pushState(null,"","?code="+encodeURIComponent(code));
+  loadMovie(code);
+});
+
+window.addEventListener("popstate",()=>{
+  const code = new URLSearchParams(location.search).get("code");
+  code ? loadMovie(code) : showHome();
+});
+
+async function showHome(){
+  app.innerHTML = `<div class="empty">Sedang mengambil katalog...</div>`;
+
+  try{
+    const res = await fetch(API_BASE + "/api/home");
+    const data = await res.json();
+
+    const all = [
+      ...(data.trending || []),
+      ...(data.recent || []),
+      ...(data.random || [])
+    ];
+
+    renderHero(all);
+
+    if(!data.success){
+      app.innerHTML = `<div class="empty">Data belum tersedia. Cari CODE dulu.</div>`;
+      return;
+    }
+
+    app.innerHTML = `
+      ${renderSection("🔥 Disarankan untuk Anda", data.trending)}
+
+      <div class="ads" style="padding:0;margin:28px 0">
+        <a href="https://wa.me/6285148206443" target="_blank">
+          <img src="https://blogger.googleusercontent.com/img/a/AVvXsEiaw6O1JaLtKbIRRWJE8EPqvFUfKHOMwmR4sIDknUK5Egy0hM6MTrf5-PKVuL_fJ2_jFcYcTQgPAMtwWOSZpMdZQra7gE8uqZNSAcqNg03tXtZIZ2z_9CGlB00VZ0751rpL3g_Y7zJv9laiDuP8yXMRiLX9Dnvb1Na2GwQmGh6lRxtKaKOuDnJdvW2bNQ=w640-h164">
+        </a>
+      </div>
+
+      ${renderSection("🆕 Terbaru Dibuka", data.recent)}
+      ${renderSection("⭐ Paling Banyak Dilihat", data.most_viewed)}
+      ${renderSection("🎲 Acak Untuk Anda", data.random)}
+    `;
+  }catch(e){
+    app.innerHTML = `<div class="empty">Belum ada data. Coba cari CODE terlebih dahulu.</div>`;
+    renderHero([]);
+  }
+}
+
+function renderHero(movies){
+  let list = movies.filter(x=>x && x.code).slice(0,10);
+
+  if(list.length === 0){
+    list = [
+      {code:"DASS-595",title:"DASS-595",thumbnail:"https://upload18.cc/v/DASS-595/thumb.jpg"},
+      {code:"SNOS-228",title:"SNOS-228",thumbnail:"https://upload18.cc/v/SNOS-228-UNCENSORED-LEAK/thumb.jpg"},
+      {code:"SSNI-703",title:"SSNI-703",thumbnail:"https://upload18.cc/v/SSNI-703-ENGLISH-SUBTITLE/thumb.jpg"}
+    ];
+  }
+
+  const doubled = [...list,...list];
+
+  heroTrack.innerHTML = doubled.map(item=>`
+    <div class="hero-card" onclick="openMovie('${item.code}')">
+      <img src="${item.thumbnail || 'https://via.placeholder.com/900x500?text=NO+IMAGE'}" onerror="this.src='https://via.placeholder.com/900x500/222222/ffffff?text=NO+IMAGE'">
+      <div class="hero-title">${escapeHtml(item.code)}</div>
+    </div>
+  `).join("");
+}
+
+function renderSection(title,movies){
+  if(!movies || movies.length === 0){
+    return `
+      <h2 class="section-title">${title}</h2>
+      <div class="empty">Belum ada data.</div>
+    `;
+  }
+
+  return `
+    <h2 class="section-title">${title}</h2>
+    <div class="grid">
+      ${movies.map(item=>`
+        <div class="card" onclick="openMovie('${item.code}')">
+          <div class="thumb">
+            <img loading="lazy" src="${item.thumbnail || 'https://via.placeholder.com/400x260?text=NO+IMAGE'}" onerror="this.src='https://via.placeholder.com/400x260/222222/ffffff?text=NO+IMAGE'">
+            <span class="badge">${item.views || 1}</span>
+          </div>
+          <h3>${escapeHtml(item.title || item.code)}</h3>
+          <p>${escapeHtml(item.code)} • ${item.views || 1} views</p>
+        </div>
+      `).join("")}
+    </div>
+  `;
+}
+
+async function loadMovie(code){
+  app.innerHTML = `<div class="empty">Loading ${escapeHtml(code)}...</div>`;
+
+  try{
+    const res = await fetch(API_BASE + "/api/detail/" + encodeURIComponent(code));
+    const data = await res.json();
+
+    if(!data.success){
+      app.innerHTML = `<div class="empty">Data tidak ditemukan.</div>`;
+      return;
+    }
+
+    const m = data.movie;
+    document.title = m.title || m.code;
+
+    app.innerHTML = `
+      <h1 class="section-title">${escapeHtml(m.title || m.code)}</h1>
+
+      <div class="meta">
+        <span>CODE: ${escapeHtml(m.code)}</span>
+        <span>Actress: ${escapeHtml(m.actress || "Unknown")}</span>
+        <span>Genre: ${escapeHtml(m.genre || "Unknown")}</span>
+        <span>Studio: ${escapeHtml(m.studio || "Unknown")}</span>
+      </div>
+
+      <div class="player">
+        <iframe src="${m.embed}" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="btnrow">
+        <a class="btn watch" href="${m.embed}" target="_blank">WATCH NOW</a>
+        <a class="btn uncensored" href="${m.uncensored}" target="_blank">UNCENSORED</a>
+        <a class="btn telegram" href="https://t.me/jpnvids1no1stylegruop" target="_blank">TELEGRAM</a>
+        <a class="btn facebook" href="https://web.facebook.com/filmdramajapan/" target="_blank">FACEBOOK</a>
+      </div>
+
+      ${renderGallery(m.gallery, m.thumbnail)}
+
+      <div class="ads" style="padding:0;margin:22px 0">
+        <a href="https://wa.me/6285148206443" target="_blank">
+          <img src="https://blogger.googleusercontent.com/img/a/AVvXsEh6dOF6OENxhluxeF7Ds3HrWjXIswJrOZ_8E7rytbNYqWjS5jcrsJRXIF-PfzTaayQ9yHqtXiphPZuCohyJDneAbZ5XNgTXmFzGuOO0VceRIiO8nfvdkurGkTXMEt-bFIAGxFoplDSuaFVC19ec3QqUI9w6QoUocRRV6L0gq5o1Ws7b-2Sr2kc25Aj81Q" width="970" height="250" style="display:block;max-width:100%;height:auto;">
+        </a>
+      </div>
+
+      <div class="info">
+        <img src="${m.thumbnail || 'https://via.placeholder.com/400x560?text=NO+IMAGE'}" onerror="this.src='https://via.placeholder.com/400x560/222222/ffffff?text=NO+IMAGE'">
+        <div>
+          <h2>Movie Info</h2>
+          <p><b>Title:</b> ${escapeHtml(m.title || m.code)}</p>
+          <p><b>Code:</b> ${escapeHtml(m.code)}</p>
+          <p><b>Actress:</b> ${escapeHtml(m.actress || "Unknown")}</p>
+          <p><b>Genre:</b> ${escapeHtml(m.genre || "Unknown")}</p>
+          <p><b>Studio:</b> ${escapeHtml(m.studio || "Unknown")}</p>
+        </div>
+      </div>
+    `;
+
+    showHomeRefreshHero();
+  }catch(e){
+    app.innerHTML = `<div class="empty">Gagal mengambil data dari Worker.</div>`;
+  }
+}
+
+let currentGallery = [];
+let currentImageIndex = 0;
+
+function renderGallery(gallery, thumbnail){
+  const imgs = [];
+
+  if(thumbnail) imgs.push(thumbnail);
+
+  if(Array.isArray(gallery)){
+    gallery.forEach(img=>{
+      if(img && !imgs.includes(img)) imgs.push(img);
+    });
+  }
+
+  if(imgs.length === 0){
+    return `
+      <h2 class="section-title">🖼️ Gallery</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/700x430/222222/ffffff?text=NO+IMAGE">
+        </div>
+      </div>
+    `;
+  }
+
+  currentGallery = imgs.slice(0,20);
+
+  return `
+    <h2 class="section-title">🖼️ Gallery</h2>
+    <div class="gallery-grid">
+      ${currentGallery.map((img,index)=>`
+        <div class="gallery-item" onclick="openImageModal(${index})">
+          <img loading="lazy" src="${img}" onerror="this.src='https://via.placeholder.com/700x430/222222/ffffff?text=NO+IMAGE'">
+        </div>
+      `).join("")}
+    </div>
+  `;
+}
+
+function openImageModal(index){
+  if(!currentGallery.length) return;
+  currentImageIndex = index;
+  updateModalImage();
+  document.getElementById("imageModal").classList.add("active");
+}
+
+function closeImageModal(){
+  document.getElementById("imageModal").classList.remove("active");
+}
+
+function nextImage(){
+  if(!currentGallery.length) return;
+  currentImageIndex = (currentImageIndex + 1) % currentGallery.length;
+  updateModalImage();
+}
+
+function prevImage(){
+  if(!currentGallery.length) return;
+  currentImageIndex = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length;
+  updateModalImage();
+}
+
+function updateModalImage(){
+  document.getElementById("modalImage").src = currentGallery[currentImageIndex];
+  document.getElementById("modalCount").textContent =
+    `${currentImageIndex + 1} / ${currentGallery.length}`;
+}
+
+document.addEventListener("keydown", e=>{
+  const modal = document.getElementById("imageModal");
+  if(!modal || !modal.classList.contains("active")) return;
+  if(e.key === "Escape") closeImageModal();
+  if(e.key === "ArrowRight") nextImage();
+  if(e.key === "ArrowLeft") prevImage();
+});
+
+async function showHomeRefreshHero(){
+  try{
+    const res = await fetch(API_BASE + "/api/home");
+    const data = await res.json();
+    renderHero([...(data.trending||[]),...(data.recent||[])]);
+  }catch(e){}
+}
+
+function openMovie(code){
+  history.pushState(null,"","?code="+encodeURIComponent(code));
+  input.value = code;
+  loadMovie(code);
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function escapeHtml(text){
+  return String(text || "")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+const firstCode = new URLSearchParams(location.search).get("code");
+if(firstCode){
+  input.value = firstCode;
+  loadMovie(firstCode);
+}else{
+  showHome();
+}
+</script>
+
+</body>
+</html>
